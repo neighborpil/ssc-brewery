@@ -22,6 +22,7 @@ import guru.sfg.brewery.domain.Beer;
 import guru.sfg.brewery.repositories.BeerInventoryRepository;
 import guru.sfg.brewery.repositories.BeerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -46,7 +47,6 @@ public class BeerController {
 
     private final BeerRepository beerRepository;
     private final BeerInventoryRepository beerInventoryRepository;
-
 
     @RequestMapping("/find")
     public String findBeers(Model model) {

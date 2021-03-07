@@ -13,8 +13,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class IndexControllerIT extends BaseIT {
 
     @Test
-    void testGetIndexSlash() throws Exception{
-        mockMvc.perform(get("/" ))
+    void testGetIndexSlash() throws Exception {
+        mockMvc.perform(get("/"))
                 .andExpect(status().isOk());
     }
 }

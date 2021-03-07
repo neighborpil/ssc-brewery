@@ -11,7 +11,7 @@
     <div class="form-group has-feedback">
 
         <input
-                th:replace="~{fragments/inputField :: input ('Customer Name', 'customerName', 'text')}" />
+                th:replace="~{fragments/inputField :: input ('Customer Name', 'customerName', 'text')}"/>
 
     </div>
     <div class="form-group">
@@ -19,7 +19,8 @@
             <button
                     th:with="text=${customer['new']} ? 'Add Customer' : 'Update Customer'"
                     class="btn btn-default" type="submit" th:text="${text}">Add
-                Customer</button>
+                Customer
+            </button>
         </div>
     </div>
 </form>
