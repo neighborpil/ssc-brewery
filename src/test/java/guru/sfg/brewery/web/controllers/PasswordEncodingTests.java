@@ -1,6 +1,7 @@
 package guru.sfg.brewery.web.controllers;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.LdapShaPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -15,6 +16,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PasswordEncodingTests {
 
     static final String PASSWORD = "password";
+
+    @Test
+    void testBcrypt() {
+        // 암호화 강도를 조절 할 수 있다. 기본은 10이고,
+        // 숫자를 늘려갈수(12, 15, 18)록 암호화 하는데 시간이 오래 걸린다
+        // 이를 통해 brute fource attack을 막을 수 있다
+
+//        PasswordEncoder bcrypt = new BCryptPasswordEncoder(15);
+        PasswordEncoder bcrypt = new BCryptPasswordEncoder();
+
+        System.out.println(bcrypt.encode(PASSWORD));
+        System.out.println(bcrypt.encode(PASSWORD));
+    }
 
     @Test
     void testSha256() {
